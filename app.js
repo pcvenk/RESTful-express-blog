@@ -4,11 +4,14 @@ var express    = require('express'),
     bodyParser = require('body-parser'),
       mongoose = require('mongoose');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('views', path.join(__dirname, 'views'));
+// parse application/json
+app.use(bodyParser.json());
+
+// app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 //MONGOOOSE
@@ -57,6 +60,25 @@ app.get('/blogs', function(req, res){
 //NEW
 app.get('/blogs/new', function(req, res){
    res.render('new');
+});
+
+//CREATE
+app.post('/blogs', function(req, res){
+
+    var blog = {
+        title: req.body.title,
+        image: req.body.image,
+        body: req.body.body
+    };
+
+    Blog.create(blog, function(err, newBlog){
+       if(err){
+           console.log(err);
+           res.render('new');
+       } else {
+          res.redirect('/blogs');
+       }
+    });
 });
 
 app.listen(3000, function(){

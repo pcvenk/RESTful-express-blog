@@ -2,30 +2,25 @@
 
 <div class="ui raised very padded text container segment">
     <h2 class=" ui header center aligned">FORM</h2>
-    <form method="POST"
+    <form method="post"
           action="/blogs"
           class="ui form">
         <div class="field">
             <label>Blog Title</label>
-            <input type="text" name="blog.title" placeholder="Enter Title">
+            <input type="text" name="title" placeholder="Enter Title">
         </div>
 
         <div class="field">
             <label>Image</label>
-            <input type="text" name="blog.image" placeholder="Image URL">
+            <input type="text" name="image" placeholder="Image URL">
         </div>
 
         <div class="field">
             <label>Blog Post</label>
-            <textarea name="blog.body"
-                      cols="30"
-                      rows="10"
-                      placeholder="Fill in content">
-            </textarea>
+            <input type="text" name="body">
         </div>
 
-        <button type="submit"
-               class="ui teal basic button">Submit</button>
+        <input type="submit" class="ui teal basic button"></input>
     </form>
 
 </div>
