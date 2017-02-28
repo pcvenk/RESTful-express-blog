@@ -47,7 +47,7 @@ app.get('/blogs', function(req, res){
         if(err){
             res.send(err);
         } else {
-            res.render('index', {blogs: blogs})
+            res.render('index', {blogs: blogs});
         }
     });
 });
