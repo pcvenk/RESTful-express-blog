@@ -90,7 +90,6 @@ app.get('/blogs/:id', function(req, res){
        if(err){
            res.send(err);
        } else {
-           console.log(clickedBlog);
            res.render('show', {
                blog: clickedBlog
            });
@@ -109,6 +108,25 @@ app.get('/blogs/:id/edit', function(req, res){
            });
        }
    })
+});
+
+//UPDATE
+app.put('/blogs/:id', function(req, res){
+    var updatedBlog = {
+        title: req.body.title,
+        image: req.body.image,
+        body: req.body.body
+    };
+
+    console.log(updatedBlog);
+
+    Blog.findByIdAndUpdate(req.params.id, updatedBlog, function(err, updBlog){
+       if(err){
+           res.render(err);
+       } else{
+           res.redirect('/blogs/'+req.params.id);
+       }
+    });
 });
 
 app.listen(3000, function(){
