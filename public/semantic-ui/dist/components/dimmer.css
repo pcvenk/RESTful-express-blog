@@ -162,7 +162,7 @@ body.dimmable > .dimmer {
 ---------------*/
 
 
-/* Displays without javascript */
+/* Displays without tinymce */
 .ui.simple.dimmer {
   display: block;
   overflow: hidden;

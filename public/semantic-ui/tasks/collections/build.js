@@ -12,7 +12,7 @@ module.exports = function(gulp) {
   ;
 
   // in case these tasks are undefined during import, less make sure these are available in scope
-  gulp.task('build-javascript', 'Builds all javascript from source', buildJS);
+  gulp.task('build-tinymce', 'Builds all tinymce from source', buildJS);
   gulp.task('build-css', 'Builds all css from source', buildCSS);
   gulp.task('build-assets', 'Copies all assets from source', buildAssets);
 

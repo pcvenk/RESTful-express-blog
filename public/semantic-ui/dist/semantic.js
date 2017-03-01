@@ -1170,7 +1170,7 @@ $.fn.form = function(parameters) {
                   $prompt.transition(settings.transition + ' in', settings.duration);
                 }
                 else {
-                  module.verbose('Displaying error with fallback javascript animation');
+                  module.verbose('Displaying error with fallback tinymce animation');
                   $prompt
                     .fadeIn(settings.duration)
                   ;
@@ -3798,7 +3798,7 @@ $.fn.dimmer = function(parameters) {
               ;
             }
             else {
-              module.verbose('Showing dimmer animation with javascript');
+              module.verbose('Showing dimmer animation with tinymce');
               module.set.dimmed();
               if(settings.opacity == 'auto') {
                 settings.opacity = 0.8;
@@ -3842,7 +3842,7 @@ $.fn.dimmer = function(parameters) {
               ;
             }
             else {
-              module.verbose('Hiding dimmer with javascript');
+              module.verbose('Hiding dimmer with tinymce');
               module.remove.dimmed();
               $dimmer
                 .stop()
@@ -13948,7 +13948,7 @@ $.fn.search = function(parameters) {
               ;
             }
             else {
-              module.debug('Showing results with javascript');
+              module.debug('Showing results with tinymce');
               $results
                 .stop()
                 .fadeIn(settings.duration, settings.easing)
@@ -13979,7 +13979,7 @@ $.fn.search = function(parameters) {
               ;
             }
             else {
-              module.debug('Hiding results with javascript');
+              module.debug('Hiding results with tinymce');
               $results
                 .stop()
                 .fadeOut(settings.duration, settings.easing)

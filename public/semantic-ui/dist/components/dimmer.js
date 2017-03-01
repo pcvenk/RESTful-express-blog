@@ -253,7 +253,7 @@ $.fn.dimmer = function(parameters) {
               ;
             }
             else {
-              module.verbose('Showing dimmer animation with javascript');
+              module.verbose('Showing dimmer animation with tinymce');
               module.set.dimmed();
               if(settings.opacity == 'auto') {
                 settings.opacity = 0.8;
@@ -297,7 +297,7 @@ $.fn.dimmer = function(parameters) {
               ;
             }
             else {
-              module.verbose('Hiding dimmer with javascript');
+              module.verbose('Hiding dimmer with tinymce');
               module.remove.dimmed();
               $dimmer
                 .stop()

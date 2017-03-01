@@ -29016,7 +29016,7 @@ body.dimmable > .dimmer {
      Simple
 ---------------*/
 
-/* Displays without javascript */
+/* Displays without tinymce */
 
 .ui.simple.dimmer {
   display: block;
@@ -30263,7 +30263,7 @@ select.ui.dropdown {
      Simple
 ---------------*/
 
-/* Displays without javascript */
+/* Displays without tinymce */
 
 .ui.simple.dropdown .menu:before,
 .ui.simple.dropdown .menu:after {

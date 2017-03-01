@@ -167,7 +167,7 @@ module.exports = function(callback) {
     .pipe(gulp.dest(output.themes))
   ;
 
-  // copy source javascript
+  // copy source tinymce
   gulp.src(source.definitions + '/**/' + globs.components + '.js')
     .pipe(plumber())
     .pipe(flatten())

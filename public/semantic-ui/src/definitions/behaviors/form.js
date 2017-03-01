@@ -672,7 +672,7 @@ $.fn.form = function(parameters) {
                   $prompt.transition(settings.transition + ' in', settings.duration);
                 }
                 else {
-                  module.verbose('Displaying error with fallback javascript animation');
+                  module.verbose('Displaying error with fallback tinymce animation');
                   $prompt
                     .fadeIn(settings.duration)
                   ;

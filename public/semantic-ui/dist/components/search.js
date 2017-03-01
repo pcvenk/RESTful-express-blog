@@ -890,7 +890,7 @@ $.fn.search = function(parameters) {
               ;
             }
             else {
-              module.debug('Showing results with javascript');
+              module.debug('Showing results with tinymce');
               $results
                 .stop()
                 .fadeIn(settings.duration, settings.easing)
@@ -921,7 +921,7 @@ $.fn.search = function(parameters) {
               ;
             }
             else {
-              module.debug('Hiding results with javascript');
+              module.debug('Hiding results with tinymce');
               $results
                 .stop()
                 .fadeOut(settings.duration, settings.easing)

@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include ./partials/header %>
 
 <h1>Welcome to the blog page listing</h1>
 
@@ -14,7 +14,7 @@
         </div>
         <div class="description">
             <!--trunctuating text to 100 characters-->
-            <p><%= blog.body.substring(0, 100) %>...</p>
+            <p><%- blog.body.substring(0, 100) %>...</p>
         </div>
         <div>
             <a href="/blogs/<%= blog._id %>">More Info</a>
@@ -23,4 +23,4 @@
 </div>
 <% }); %>
 
-<% include partials/footer %>
+<% include ./partials/footer %>
