@@ -2,6 +2,7 @@ var express    = require('express'),
            app = express(),
           path = require('path'),
     bodyParser = require('body-parser'),
+methodOverride = require('method-override'),
       mongoose = require('mongoose');
 
 // parse application/x-www-form-urlencoded
@@ -13,6 +14,8 @@ app.use(bodyParser.json());
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+app.use(methodOverride('_method'));
 
 //MONGOOOSE
 mongoose.connect('mongodb://localhost/restfull-express-blog');

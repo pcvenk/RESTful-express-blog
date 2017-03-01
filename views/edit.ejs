@@ -2,8 +2,8 @@
 
 <div class="ui raised very padded text container segment">
     <h2 class=" ui header center aligned">FORM</h2>
-    <form method="post"
-          action="/blogs"
+    <form method="POST"
+          action="/blogs/<%= blog._id %>"?_method="PUT"
           class="ui form">
         <div class="field">
             <label>Blog Title</label>
