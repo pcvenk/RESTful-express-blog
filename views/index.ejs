@@ -13,7 +13,8 @@
             <span class="date"><%= blog.created %></span>
         </div>
         <div class="description">
-            <%= blog.body %>
+            <!--trunctuating text to 100 characters-->
+            <p><%= blog.body.substring(0, 100) %>...</p>
         </div>
         <div>
             <a href="/blogs/<%= blog._id %>">More Info</a>
