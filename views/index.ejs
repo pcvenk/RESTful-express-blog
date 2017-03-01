@@ -3,8 +3,8 @@
 <h1>Welcome to the blog page listing</h1>
 
 <div class="ui stackable four column grid">
-    <div class="column">
-        <% blogs.forEach(function(blog){ %>
+    <% blogs.forEach(function(blog){ %>
+        <div class="column">
             <div class="ui card">
                 <div class="image">
                     <img src="<%= blog.image %>">
@@ -23,8 +23,8 @@
                     </div>
                 </div>
             </div>
-        <% }); %>
-    </div>
+         </div>
+    <% }); %>
 </div>
 
 

@@ -95,6 +95,19 @@ app.get('/blogs/:id', function(req, res){
    })
 });
 
+//EDIT
+app.get('/blogs/:id/edit', function(req, res){
+   Blog.findById(req.params.id, function(err, updateBlog){
+       if(err){
+           res.send(err);
+       } else{
+           res.render('edit', {
+               blog: updateBlog
+           });
+       }
+   })
+});
+
 app.listen(3000, function(){
    console.log('Server is running');
 });
