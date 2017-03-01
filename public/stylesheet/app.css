@@ -1,7 +1,7 @@
-i.icon {
-    font-size: 2em;
+body {
+    margin-top: 6em;
 }
 
-.ui.raised.segment {
-    margin-top: 7em;
+i.icon {
+    font-size: 2em;
 }

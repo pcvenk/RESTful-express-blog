@@ -2,25 +2,31 @@
 
 <h1>Welcome to the blog page listing</h1>
 
-<% blogs.forEach(function(blog){ %>
-<div class="ui card">
-    <div class="image">
-        <img src="<%= blog.image %>">
-    </div>
-    <div class="content">
-        <a class="header"><%= blog.title %></a>
-        <div class="meta">
-            <span class="date"><%= blog.created %></span>
-        </div>
-        <div class="description">
-            <!--trunctuating text to 100 characters-->
-            <p><%- blog.body.substring(0, 100) %>...</p>
-        </div>
-        <div>
-            <a href="/blogs/<%= blog._id %>">More Info</a>
-        </div>
+<div class="ui stackable four column grid">
+    <div class="column">
+        <% blogs.forEach(function(blog){ %>
+            <div class="ui card">
+                <div class="image">
+                    <img src="<%= blog.image %>">
+                </div>
+                <div class="content">
+                    <a class="header"><%= blog.title %></a>
+                    <div class="meta">
+                        <span class="date"><%= blog.created %></span>
+                    </div>
+                    <div class="description">
+                        <!--trunctuating text to 200 characters-->
+                        <p><%- blog.body.substring(0, 200) %>...</p>
+                    </div>
+                    <div>
+                        <a href="/blogs/<%= blog._id %>">Read More</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
     </div>
 </div>
-<% }); %>
+
+
 
 <% include ./partials/footer %>
