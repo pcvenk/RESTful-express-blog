@@ -1,5 +1,9 @@
 body {
     margin-top: 6em;
+    background: #2C3E50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2C3E50 , #4CA1AF); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C3E50 , #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 i.icon {
@@ -8,4 +12,30 @@ i.icon {
 
 #form {
     display: inline;
+}
+
+.read-more {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.extra {
+    display: inline;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.large.header {
+    font-weight: 300;
+    letter-spacing: 1.6px;
+    font-size: 3em !important;
+}
+
+.blog {
+    padding-bottom: 30px;
+}
+
+.ui.segment {
+  padding:50px;
 }

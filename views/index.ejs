@@ -1,36 +1,36 @@
 <% include ./partials/header %>
 
 <div class="ui main text container">
-    <div class="ui huge header centered">BLOG site</div>
-    <div class="ui raised">
-        <div class="ui raised segment">
-            <div class="ui divided items">
-                <% blogs.forEach(function(blog){ %>
-                <div class="ui fluid rounded image">
-                    <img src="<%= blog.image %>">
-                </div>
-                <div class="content">
-                    <div class="ui large header"><%= blog.title %></div>
-                    <div class="description">
-                        <!--trunctuating text to 200 characters-->
-                        <p><%- blog.body.substring(0, 200) %>...</p>
-                    </div>
-
-                    <div class="extra">
-                        <span><%= blog.created.toDateString() %></span>
-                    </div>
-
-                    <div>
-                        <a class="ui teal basic button" href="/blogs/<%= blog._id %>">Read More</a>
-                    </div>
-                    <hr>
-                </div>
-                <% }); %>
+    <div class="ui segments">
+        <div class="ui segment">
+            <% blogs.forEach(function(blog){ %>
+            <div class="ui large header"><%= blog.title %></div>
+            <div class="extra">
+                <span><%= blog.created.toDateString() %></span>
             </div>
+            <div class="ui fluid rounded image">
+                <img src="<%= blog.image %>">
+            </div>
+            <div class="content">
 
+                <div class="description">
+                    <!--trunctuating text to 200 characters-->
+                    <p><%- blog.body.substring(0, 350) %>...</p>
+                </div>
+
+                <div class="read-more">
+                    <a class="ui fluid teal basic button" href="/blogs/<%= blog._id %>">Read
+                        More</a>
+                </div>
+                <div class="ui horizontal divider">
+                    <i class="code icon"></i>
+                </div>
+            </div>
+            <% }); %>
         </div>
     </div>
 </div>
+
 
 
 
