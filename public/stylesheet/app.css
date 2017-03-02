@@ -5,3 +5,7 @@ body {
 i.icon {
     font-size: 2em;
 }
+
+#form {
+    display: inline;
+}
