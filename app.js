@@ -1,15 +1,15 @@
-var express    = require('express'),
-           app = express(),
-          path = require('path'),
-    bodyParser = require('body-parser'),
-methodOverride = require('method-override'),
-      mongoose = require('mongoose');
+var express      = require('express'),
+           app   = express(),
+          path   = require('path'),
+    bodyParser   = require('body-parser'),
+methodOverride   = require('method-override'),
+expressSanitizer = require('express-sanitizer'),
+      mongoose   = require('mongoose');
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-
-// parse application/json
+// parse application/x-www-form-urlencoded && json file
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressSanitizer());
 
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -73,6 +73,8 @@ app.post('/blogs', function(req, res){
         image: req.body.image,
         body: req.body.body
     };
+
+    blog.body = req.sanitize(blog.body);
 
     Blog.create(blog, function(err, newBlog){
        if(err){
