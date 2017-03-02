@@ -128,6 +128,17 @@ app.put('/blogs/:id', function(req, res){
     });
 });
 
+//DESTROY
+app.delete('/blogs/:id', function(req, res){
+   Blog.findByIdAndRemove(req.params.id, function(err){
+       if(err){
+           res.send(err);
+       } else{
+           res.redirect('/blogs');
+       }
+   })
+});
+
 app.listen(3000, function(){
    console.log('Server is running');
 });
