@@ -1,31 +1,37 @@
 <% include ./partials/header %>
 
-<h1>Welcome to the blog page listing</h1>
-
-<div class="ui stackable four column grid">
-    <% blogs.forEach(function(blog){ %>
-        <div class="column">
-            <div class="ui card">
-                <div class="image">
+<div class="ui main text container">
+    <div class="ui huge header centered">BLOG site</div>
+    <div class="ui raised">
+        <div class="ui raised segment">
+            <div class="ui divided items">
+                <% blogs.forEach(function(blog){ %>
+                <div class="ui fluid rounded image">
                     <img src="<%= blog.image %>">
                 </div>
                 <div class="content">
-                    <a class="header"><%= blog.title %></a>
-                    <div class="meta">
-                        <span class="date"><%= blog.created %></span>
-                    </div>
+                    <div class="ui large header"><%= blog.title %></div>
                     <div class="description">
                         <!--trunctuating text to 200 characters-->
                         <p><%- blog.body.substring(0, 200) %>...</p>
                     </div>
-                    <div>
-                        <a href="/blogs/<%= blog._id %>">Read More</a>
+
+                    <div class="extra">
+                        <span><%= blog.created.toDateString() %></span>
                     </div>
+
+                    <div>
+                        <a class="ui teal basic button" href="/blogs/<%= blog._id %>">Read More</a>
+                    </div>
+                    <hr>
                 </div>
+                <% }); %>
             </div>
-         </div>
-    <% }); %>
+
+        </div>
+    </div>
 </div>
+
 
 
 
